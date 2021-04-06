@@ -1,0 +1,193 @@
+{% load static %}<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Features - Brand</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table-1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Rounded-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/smoothproducts.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">PayRos</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="employee.html">EMPLOYEE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="salary.html">SALARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculation.html">CALCULATION</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">Bank advice</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-info" style="text-align: left;">All Employee</h2>
+                        </div>
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="#">
+                                <p style="margin: 3px;color: rgb(0,0,0);">Approved</p>
+                            </a>
+                            <h4 style="margin: 3px;">|</h4><a href="emp_table.html">
+                                <p style="margin: 3px;color: rgb(0,0,0);">Pending</p>
+                            </a>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+                <section class="clean-block clean-form dark">
+                    <div class="container">
+                        <div class="block-heading">
+                            <h2 class="text-info">Employee</h2><button class="btn btn-primary" type="button" style="background: rgb(59,163,231);margin: 5px;">View</button><button class="btn btn-primary" type="button" style="background: rgb(224,225,225);color: rgb(0,0,0);border-style: none;margin: 5px;">Edit</button>
+                            <div class="row d-lg-flex justify-content-lg-end align-items-lg-center">
+                                <div class="col d-lg-flex justify-content-lg-end align-items-lg-center"><button class="btn btn-primary" type="button" style="background: var(--green);color: rgb(247,245,245);border-color: rgb(0,0,0);"><i class="fas fa-file-excel" style="color: rgb(255,255,255);"></i>Export to Excel</button></div>
+                            </div>
+                            <section class="mt-4">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xl-12 mb-4">
+                                            <h3 class="text-center">Bootstrap HTML to Excel</h3>
+                                        </div>                <div class="col-xl-12 mb-3">
+                    <div class="table-responsive table-bordered">
+                        <table class="table table-bordered table2excel mb-3">
+                            <thead>
+                                <tr>
+                                    <th>Cell 1</th>
+                                    <th>Cell 2</th>
+                                    <th>Cell 3</th>
+                                    <th>Cell 4</th>
+                                    <th>Celll 5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="noExl">
+                                    <td>This</td>
+                                    <td>Cell</td>
+                                    <td>would</td>
+                                    <td>not</td>
+                                    <td>export</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                                <tr>
+                                    <td>Cell 1</td>
+                                    <td>Cell 2</td>
+                                    <td>Cell 3</td>
+                                    <td>Cell 4</td>
+                                    <td>Cell 5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-info exportToExcel ml-2 mb-2" type="button"><strong>Export as Excel</strong></button>
+                    </div>
+                </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2021 Copyright Text</p>
+        </div>
+    </footer>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/smoothproducts.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <script src="{% static 'assets/js/HTML-Table-to-Excel-V2.js' %}"></script>
+</body>
+
+</html>

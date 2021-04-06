@@ -1,0 +1,139 @@
+{% load static %}<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Features - Brand</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table-1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Rounded-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/smoothproducts.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">PayRos</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="employee.html">EMPLOYEE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="salary.html">SALARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calculation.html">CALCULATION</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">Bank advice</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <section class="clean-block features">
+            <div class="block-heading">
+                <div class="row" style="margin: 5%;">
+                    <div class="col">
+                        <h2 class="text-info" style="text-align: left;">Salary<br></h2>
+                    </div>
+                    <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="/salary">
+                            <p style="margin: 3px;color: rgb(0,0,0);">All Bills</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/employee_view">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Employee</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/approved">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Approve increments</p>
+                        </a><h4 style="margin: 3px;">|</h4><a href="/salary/pending">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Pending increments</p>
+                        </a>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+            <section class="clean-block clean-form dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h2 class="text-info">View All Bills</h2><table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Empolyee ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Net Salary</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bill in bills %}
+            <tr>
+                <td>{{ bill.employee_id }}</td>
+                <td>{{ bill.name }}</td>
+                <td>{{ bill.net_salary }}</td>
+                <td>{{ bill.date }}</td>
+                <td><a href="/salary/view_bill/{{ bill.id }}"><button class="btn btn-primary" type="button" style="background: rgb(59,163,231);">View</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2021 Copyright Text</p>
+        </div>
+    </footer>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/smoothproducts.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <script src="{% static 'assets/js/HTML-Table-to-Excel-V2.js' %}"></script>
+</body>
+
+</html>

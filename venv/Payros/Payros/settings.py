@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'calculation.apps.CalculationConfig',
+    'bankadvice.apps.BankadviceConfig',
     'employee.apps.EmployeeConfig',
     'salary.apps.SalaryConfig',
     'django.contrib.admin',
@@ -78,9 +80,9 @@ WSGI_APPLICATION = 'Payros.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'payros_origin',
+        'NAME': 'payros',
         'USER': 'postgres',
-        'PASSWORD': '1234',
+        'PASSWORD': 'shim7',
         'PORT': '5432',
     }
 }
