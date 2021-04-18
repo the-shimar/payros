@@ -41,13 +41,21 @@
                         <div class="col">
                             <h2 class="text-info" style="text-align: left;">Increment</h2>
                         </div>
-                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="/salary/approved">
-                                <p style="margin: 3px;color: rgb(0,0,0);">Approved</p>
-                            </a>
-                            <h4 style="margin: 3px;">|</h4><a href="/salary/pending">
-                                <p style="margin: 3px;color: rgb(0,0,0);">Pending</p>
-                            </a>
-                        </div>
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="/salary">
+                            <p style="margin: 3px;color: rgb(0,0,0);">All Bills</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="{% url 'salary_excelsheet' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Salary Report</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/employee_view">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Employee</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/approved">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Approve increments</p>
+                        </a><h4 style="margin: 3px;">|</h4><a href="/salary/pending">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Pending increments</p>
+                        </a>
+                    </div>
                     </div>
                     <p></p>
                 </div>

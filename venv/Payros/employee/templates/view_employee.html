@@ -26,7 +26,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="employee.html">EMPLOYEE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="salary.html">SALARY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'all_bills' %}">SALARY</a></li>
                     <li class="nav-item"><a class="nav-link" href="calculation.html">CALCULATION</a></li>
                     <li class="nav-item"><a class="nav-link" href="about-us.html">Bank advice</a></li>
                 </ul>
@@ -41,10 +41,10 @@
                         <div class="col">
                             <h2 class="text-info" style="text-align: left;">Existing Employee<br></h2>
                         </div>
-                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="#">
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="{% url 'employee_add' %}">
                                 <p style="margin: 3px;color: rgb(0,0,0);">Add</p>
                             </a>
-                            <h4 style="margin: 3px;">|</h4><a href="emp_table.html">
+                            <h4 style="margin: 3px;">|</h4><a href="{% url 'employee' %}">
                                 <p style="margin: 3px;color: rgb(0,0,0);">View</p>
                             </a>
                         </div>
@@ -72,7 +72,7 @@
                 <td>{{ emp.name }}</td>
                 <td>{{ emp.department }}</td>
                 <td><a href="/employee/edit_view/{{ emp.employee_id }}"><button class="btn btn-primary" type="button" style="background: rgb(59,163,231);">View</button></a></td>
-                <td><a href="/employee/delete/{{ emp.employee_id }}"><button class="btn btn-primary" type="button" style="background: rgb(224,225,225);color: rgb(0,0,0);border-style: none;">Edit</button></a></td>
+                <td><a href="/employee/delete/{{ emp.employee_id }}"><button class="btn btn-primary" type="button" style="background: rgb(224,225,225);color: rgb(0,0,0);border-style: none;">Delete</button></a></td>
             </tr>
             {% endfor %}
         </tbody>

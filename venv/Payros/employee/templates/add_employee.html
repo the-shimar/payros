@@ -41,13 +41,13 @@
                         <div class="col">
                             <h2 class="text-info" style="text-align: left;">Employee</h2>
                         </div>
-                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="#">
-                                <p style="margin: 3px;color: rgb(0,0,0);">Add</p>
-                            </a>
-                            <h4 style="margin: 3px;">|</h4><a href="emp_table.html">
-                                <p style="margin: 3px;color: rgb(0,0,0);">View</p>
-                            </a>
-                        </div>
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="{% url 'employee_add' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Add</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="{% url 'employee' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">View</p>
+                        </a>
+                    </div>
                     </div>
                 </div>
             </div>

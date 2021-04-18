@@ -65,6 +65,8 @@ def edit_view(request, emp_id):
             print(f" Emp Edit Error: {e}")
         return redirect('/employee')
     emp_obj = Employee.objects.filter(employee_id=emp_id)
-    return render(request, 'edit_employee.html', {'emp_obj': emp_obj})
+    qualification = Qualification.objects.all()
+
+    return render(request, 'edit_employee.html', {'emp_obj': emp_obj, 'qualification': qualification})
 
 

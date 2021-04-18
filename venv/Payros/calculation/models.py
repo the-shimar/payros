@@ -1,7 +1,10 @@
 from django.db import models
+from employee.models import Qualification
 
 # Create your models here.
 class Salary(models.Model):
+    qualification_NAME = models.CharField(max_length=200, default='None')
+    # qualification = models.ForeignKey(Qualification, on_delete=models.CASCADE)
     qualification = models.CharField(max_length=200, default='None')
     year = models.IntegerField(default=0)
     present_days = models.IntegerField(default=0)
@@ -22,6 +25,7 @@ class Salary(models.Model):
     det_total = models.IntegerField(default=0)
     net_salary = models.IntegerField(default=0)
     increments = models.IntegerField(default=0)
+    da = models.IntegerField(default=0)
 
     def __str__(self): 
-        return self.name
+        return self.qualification_NAME

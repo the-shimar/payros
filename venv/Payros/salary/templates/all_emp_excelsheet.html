@@ -41,23 +41,34 @@
                         <div class="col">
                             <h2 class="text-info" style="text-align: left;">All Employee</h2>
                         </div>
-                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="#">
-                                <p style="margin: 3px;color: rgb(0,0,0);">Approved</p>
-                            </a>
-                            <h4 style="margin: 3px;">|</h4><a href="emp_table.html">
-                                <p style="margin: 3px;color: rgb(0,0,0);">Pending</p>
-                            </a>
-                        </div>
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="/salary">
+                            <p style="margin: 3px;color: rgb(0,0,0);">All Bills</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="{% url 'salary_excelsheet' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Salary Report</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/employee_view">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Employee</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="/salary/approved">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Approve increments</p>
+                        </a><h4 style="margin: 3px;">|</h4><a href="/salary/pending">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Pending increments</p>
+                        </a>
+                    </div>
                     </div>
                     <p></p>
                 </div>
                 <section class="clean-block clean-form dark">
                     <div class="container">
                         <div class="block-heading">
-                            <h2 class="text-info">Employee</h2><button class="btn btn-primary" type="button" style="background: rgb(59,163,231);margin: 5px;">View</button><button class="btn btn-primary" type="button" style="background: rgb(224,225,225);color: rgb(0,0,0);border-style: none;margin: 5px;">Edit</button>
-                            <div class="row d-lg-flex justify-content-lg-end align-items-lg-center">
-                                <div class="col d-lg-flex justify-content-lg-end align-items-lg-center"><button class="btn btn-primary" type="button" style="background: var(--green);color: rgb(247,245,245);border-color: rgb(0,0,0);"><i class="fas fa-file-excel" style="color: rgb(255,255,255);"></i>Export to Excel</button></div>
+                            <h2 class="text-info">Salary Report</h2>
                             </div>
+                            <form action="" method="POST">
+                                <h5>Date: </h5>
+                            <input style="width: auto; margin: 3%;" name="date" class="form-control" type="date">
+                            <button class="btn btn-primary" type="submit" style="background: rgb(59,163,231);">Generate For All</button>
+                            </form>
                             <section class="mt-4">
                                 <div class="container">
                                     <div class="row">
