@@ -1,0 +1,136 @@
+{% load static %}<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Features - Brand</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table-1.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Data-Table.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/Rounded-Button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/smoothproducts.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">PayRos</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'employee' %}">EMPLOYEE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'all_bills' %}">SALARY</a></li>
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="/admin/calculation/salary/">CALCULATION</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'bank_advice' %}">Bank advice</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="text-info" style="text-align: left;">Employee</h2>
+                        </div>
+                        <div class="col d-lg-flex justify-content-lg-end align-items-lg-end"><a href="{% url 'employee_add' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">Add</p>
+                        </a>
+                        <h4 style="margin: 3px;">|</h4><a href="{% url 'employee' %}">
+                            <p style="margin: 3px;color: rgb(0,0,0);">View</p>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <section class="clean-block clean-form dark">
+                <div class="block-heading">
+                    <h2 class="text-info">Add new employee</h2>
+                </div>
+                <form action="/employee/add" method="POST">{% csrf_token %}
+                    <div class="form-group"><label for="name">Employee ID</label><input name="emp_id" class="form-control item" type="text" id="name"></div>
+                    <div class="form-group"><label for="name">Name</label><input name="name" class="form-control item" type="text" id="name-5"></div>
+                    <div class="form-group"><label for="name">Date of Birth</label><input name="dob" class="form-control" type="text" placeholder="DD-MM-YYYY"></div>
+                    <div class="form-group"><label for="name">Address</label><input name="address" class="form-control item" type="text" id="name-3"></div>
+                    <div class="form-group"><label for="name">Qualification</label>
+                        <input type="hidden" name="qualification" id="input_qualification" value="">
+                        <div class="dropdown"><button id="qualification_btn_id" class="btn btn-primary dropdown-toggle" aria-expanded="false" data-toggle="dropdown" type="button" style="width: 100%;background: rgb(255,255,255);border-color: rgb(206,212,218);color: rgb(75,68,68);">Select </button>
+                            <div class="dropdown-menu" style="width: 100%;">
+                                {% for q in qualification %}
+                                <a class="dropdown-item" onclick="qualification('{{ q.qualification }}')">{{ q.qualification }}</a>
+                            {% endfor %}
+                        </div>
+                        </div>
+                    </div>              
+                    <div class="form-group"><label for="name">Date of Joining</label><input name="doj" class="form-control" type="text" placeholder="DD-MM-YYYY" required></div>
+                    <!-- <div class="form-group"><label for="name">Date of Retirement</label><input name="dor" class="form-control" type="text" placeholder="DD-MM-YYYY" required></div> -->
+                    <div class="form-group"><label for="password">Department</label><input name="derpartment" class="form-control item" type="text" id="password" required></div>
+                    <div class="form-group"><label for="email">Bank Account Number</label><input name="bank_ac" class="form-control item" type="text" id="email" required></div>
+                    <div class="form-group"><label for="email">Phone Number</label><input name="ph" class="form-control item" type="phone" id="email-1" required></div>
+                    <button class="btn btn-primary btn-block" type="submit">Add</button>
+                    
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2021 Copyright Text</p>
+        </div>
+    </footer>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/smoothproducts.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+    <script src="{% static 'assets/js/HTML-Table-to-Excel-V2.js' %}"></script>
+    <script src="{% static 'assets/form.js' %}"></script>
+</body>
+
+</html>

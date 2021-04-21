@@ -1,0 +1,11 @@
+Employee
+Salary Report
+Bank advice  
+
+
+Notes:
+    correct da, hra, etc..
+
+    add epf and esi as 12 and 75
+
+    Enter Increment in Qualification table
